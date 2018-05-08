@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "@shopify/draggable": "^1.0.0-beta.7",
     "stimulus": "^1.0.1"
   },
   "devDependencies": {

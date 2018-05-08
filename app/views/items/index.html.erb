@@ -15,11 +15,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <ul>
+      <ol>
         <% @items.each do |item| %>
           <li><%= item.title %></li>
         <% end %>
-      </ul>
+      </ol>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'draggable' %>
