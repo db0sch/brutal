@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Brutal</a>
+        <% if user_signed_in? %>
+          <span class="badge badge-secondary"><%= current_user.email %></span>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-default btn-light" %>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
