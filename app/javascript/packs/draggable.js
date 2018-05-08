@@ -6,6 +6,7 @@ const sortable = new Sortable(document.querySelectorAll('ol'), {
 
 
 const persistPosition = (event) => {
+  const list = event.data.newContainer.dataset.list
   const id = event.dragEvent.data.source.dataset.itemId
   const position = event.data.newIndex + 1
   const token = getCSRFToken()
@@ -19,7 +20,7 @@ const persistPosition = (event) => {
       "Content-Type": "application/json",
       "X-CSRF-Token": token
     },
-    body: JSON.stringify({ position: position })
+    body: JSON.stringify({ item: { position: position, list: list } })
   })
     .then(response => response.json())
     .then((data) => {
@@ -32,7 +33,6 @@ const getCSRFToken = () => {
   return token
 }
 
-console.log(sortable)
 
 sortable.on('sortable:start', () => console.log('sortable:start'));
 sortable.on('sortable:sort', () => console.log('sortable:sort'));
