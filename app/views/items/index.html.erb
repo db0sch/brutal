@@ -19,7 +19,7 @@
           <h4><%= list.capitalize %></h4>
           <ol id="<%= list %>-list" data-list="<%= list %>">
             <% @items.send(list).each do |item| %>
-              <li data-item-id='<%= item.id %>'><%= item.title %></li>
+              <li data-item-id='<%= item.id %>' class="my-1 p-1 list-item"><%= item.title %></li>
             <% end %>
           </ol>
         </div>
