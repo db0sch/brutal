@@ -7,7 +7,7 @@ const sortable = new Sortable(document.querySelectorAll('ol'), {
 
 const persistPosition = (event) => {
   const id = event.dragEvent.data.source.dataset.itemId
-  const position = event.data.newIndex
+  const position = event.data.newIndex + 1
   const token = getCSRFToken()
   console.log(id)
   console.log(token)
